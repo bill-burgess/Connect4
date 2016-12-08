@@ -1,0 +1,32 @@
+{
+  "name": "Connect4",
+  "version": "0.0.1",
+  "description": "Connect 4 in a row or column to win",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "diff": "^3.1.0",
+    "tap-diff": "^0.1.1",
+    "tap-spec": "^4.1.1"
+  },
+  "devDependencies": {
+    "tape": "^4.2.2"
+  },
+  "scripts": {
+    "test": "tape test/**/*.js | tap-diff"
+  },
+  "standard": {
+    "globals": []
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bill-burgess/Connect4"
+  },
+  "author": "pietgeursen@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pietgeursen/conways/issues"
+  }
+}
