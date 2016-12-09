@@ -13,21 +13,34 @@ var app = express()
 
 var data = {'board': createBoard(), 'playerTurn': null}
 data.playerTurn = Math.floor(Math.random()*2) + 1
-
 function runGame(){
+
+  // console.logalert("help")
+
   console.log(data.board, data.playerTurn)
-  if (checkValid(data.board, Math.floor(Math.random()*7))){
-    playPiece(Math.floor(Math.random()*7), data.playerTurn, data.board)
+  var randomCol = Math.floor(Math.random()*7)
+
+  if (checkValid(data.board, randomCol)){
+    playPiece(data.playerTurn, data.board, randomCol)
     data.playerTurn = changeTurn(data.playerTurn)
   }
   if(checkWin(data.board,data.playerTurn) === true){
-    console.log( 'Player' + data.playerTurn + 'wins!')
+    console.log( 'Player ' + data.playerTurn + ' wins!')
   }else{
     runGame()
   }
 }
 runGame()
 
+// app.get('')
+//
+// app.post('/', function (req, res){
+//
+// })
+
+// function getColumnNumber(function(req, res){
+//   app.post('/', )
+// })
 // app.post('/', function(req,res) {
 //   data.cats.push(req.body)
 //   function updateData(newData){
