@@ -1,6 +1,6 @@
 var displayColumn = require('./displayColumn')
 
-function playPiece(columnNumber, playerTurn, board){
+function playPiece(playerTurn, board, columnNumber){
   var column = displayColumn(board, columnNumber)
 
   var rowNumber = null
