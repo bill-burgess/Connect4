@@ -1,3 +1,5 @@
+var displayColumn = require('displayColumn')
+
 function playPiece(columnNumber, playerTurn, board){
   var column = displayColumn(board, columnNumber)
 

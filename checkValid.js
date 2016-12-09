@@ -1,3 +1,5 @@
+var displayColumn = require('displayColumn')
+
 var checkValid = function(board, columnNumber){
   var column = displayColumn(board, columnNumber)
   var emptySquares = column.filter(function(value){
