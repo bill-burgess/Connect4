@@ -11,19 +11,31 @@ var expresshbs = require('express-handlebars')
 // var data = require('./data.json')
 var app = express()
 
-var board = createBoard()
+var data = {'board': createBoard(), 'playerTurn': null}
+data.playerTurn = Math.floor(Math.random()*2) + 1
+
 function runGame(){
-  var playerTurn = Math.floor(Math.random()) + 1
-  console.log(board, playerTurn)
-  if(checkWin === true){
-    return 'Player' + playerTurn + 'wins!'
-  // }else{
-  //   runGame()
+  console.log(data.board, data.playerTurn)
+  if (checkValid(data.board, Math.floor(Math.random()*7))){
+    playPiece(Math.floor(Math.random()*7), data.playerTurn, data.board)
+    data.playerTurn = changeTurn(data.playerTurn)
+  }
+  if(checkWin(data.board,data.playerTurn) === true){
+    console.log( 'Player' + data.playerTurn + 'wins!')
+  }else{
+    runGame()
   }
 }
 runGame()
 
-
+// app.post('/', function(req,res) {
+//   data.cats.push(req.body)
+//   function updateData(newData){
+//     fs.writeFile('./db/data.js', JSON.stringify(newData), (err) => {
+//       if (err) throw err;
+//       console.log('It\'s saved!');
+//     })
+// }
 
 // view engine setup
 app.engine('handlebars', expresshbs({defaultLayout: 'main'})) // makes the main page html file work.
