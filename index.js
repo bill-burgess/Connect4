@@ -1,1 +1,5 @@
-
+var createBoard = require('createBoard')
+var checkWin = require('checkWin')
+checkWin ([[0,1,1,0]])
+checkWin ([[0,0,1,1]])
+checkWin ([[0,0,0,1]])
