@@ -8,8 +8,8 @@ var newArr = []
       newArr[i].push(0)
     }
   }
-  console.log(newArr)
+  // console.log(newArr)
     return newArr
 }
-createBoard()
+
 module.exports = createBoard

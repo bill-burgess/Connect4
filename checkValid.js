@@ -1,4 +1,4 @@
-var displayColumn = require('displayColumn')
+var displayColumn = require('./displayColumn')
 
 var checkValid = function(board, columnNumber){
   var column = displayColumn(board, columnNumber)
