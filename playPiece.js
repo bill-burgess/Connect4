@@ -1,7 +1,5 @@
 function playPiece(columnNumber, playerTurn, board){
-  var column = board.map(function(row){
-    return row[columnNumber]
-  })
+  var column = displayColumn(board, columnNumber)
 
   var rowNumber = null
   column.find(function(value, i){
